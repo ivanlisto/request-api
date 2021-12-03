@@ -1,0 +1,106 @@
+<div class="container-fluid">
+    <!-- Colunas de forma responsível (automaticamente) -->
+    <div class="row">
+        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+            <mat-card class="card">
+                <mat-card-subtitle class="card-header">Consulta</mat-card-subtitle>
+                <mat-card-content>
+                    <div class="requerente">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                <div class="dados_estilo"><b>Digite o CPF:</b><input class="input_style" type="text" name="filtro" [(ngModel)]="filtro">&nbsp;<button (click)="findByCpf()">OK</button></div>
+                            </div>
+                        </div>
+                    </div>
+                </mat-card-content>
+            </mat-card>
+        </div>
+
+        <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9" *ngIf="dossie.cabecalho!=null">
+            <mat-card class="card">
+                <mat-card-subtitle class="card-header">Requerente</mat-card-subtitle>
+                <mat-card-content>
+                    <div class="requerente">
+                        <div class="row">
+                            <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                                <div class="dados_estilo"><b>CPF:&nbsp;</b><label>{{ dossie.cabecalho.parametro }}</label></div>
+                            </div>
+                            <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+                                <div class="dados_estilo"><b>Nome:&nbsp;</b><label>{{ dossie.dossieMedico.laudos.listaLaudoSABITO[0].requerimentoSABITO.requerenteSABITO.nmRequerente }}</label></div>
+                            </div>
+                        </div>
+                    </div>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+</div>
+
+<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" *ngIf="dossie.cabecalho!=null">
+    <mat-card class="card">
+        <mat-card-subtitle align='center' class="card-header"><b>Dossie Médico Solicitado</b></mat-card-subtitle>
+        <mat-card-content>
+            <div class="requerente">
+                <div align='center' class="row">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col align-self-start">
+                                CPF
+                            </div>
+                            <div class="col align-self-center">
+                                NOME
+                            </div>
+                            <div class="col align-self-center">
+                                PROTOCOLO
+                            </div>
+                            <div class="col align-self-center">
+                                SITUAÇÃO
+                            </div>
+                            <div class="col align-self-end">
+                                AÇÕES
+                            </div>
+                        </div>
+                        <div class="row justify-content-center">
+                            <div class="col align-self-start">
+                                <div class="dados_estilo"><label>{{ dossie.cabecalho.parametro }}</label></div>
+                            </div>
+                            <div class="col align-self-center">
+                                <div class="dados_estilo"><label>{{ dossie.dossieMedico.laudos.listaLaudoSABITO[0].requerimentoSABITO.requerenteSABITO.nmRequerente }}</label></div>
+                            </div>
+                            <div class="col align-self-center">
+                                <div class="dados_estilo"><label>{{ dossie.cabecalho.protocolo }}</label></div>
+                            </div>
+                            <div class="col align-self-center">
+                                <tr>Em processamento</tr>
+                                <tr>Dossie disponível</tr>
+                            </div>
+                            <div class="col align-self-end">
+                                <tr>Cancelar pedido</tr>
+                                <tr><a href='tela-viewlaudo.component.html'>Ver Dossie</a></tr>
+                            </div>
+                        </div>
+                        <div class="row justify-content-center">
+                            <div class="col align-self-start">
+                                <div class="dados_estilo"><label>{{ dossie.cabecalho.parametro }}</label></div>
+                            </div>
+                            <div class="col align-self-center">
+                                <div class="dados_estilo"><label>{{ dossie.dossieMedico.laudos.listaLaudoSABITO[0].requerimentoSABITO.requerenteSABITO.nmRequerente }}</label></div>
+                            </div>
+                            <div class="col align-self-center">
+                                <div class="dados_estilo"><label>{{ dossie.cabecalho.protocolo }}</label></div>
+                            </div>
+                            <div class="col align-self-center">
+                                <tr>Em processamento</tr>
+                                <tr>Dossie disponível</tr>
+                            </div>
+                            <div class="col align-self-end">
+                                <tr>Cancelar pedido</tr>
+                                <tr>Ver Dossie</tr>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </mat-card-content>
+    </mat-card>
+</div>
